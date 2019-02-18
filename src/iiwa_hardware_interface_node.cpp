@@ -45,6 +45,7 @@ int main(int argc, char** argv)
     bool success = true;
     while (success) {
         success = app.step();
+        // std::cout << success 
     }
 
     /***************************************************************************/

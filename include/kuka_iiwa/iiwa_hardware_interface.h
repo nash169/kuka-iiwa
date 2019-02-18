@@ -43,8 +43,9 @@ namespace iiwa_hardware_interface
     double loop_hz_;
     boost::shared_ptr<controller_manager::ControllerManager> controller_manager_;
     double p_error_, v_error_, e_error_;
-  };
+
+  }; // class
   
-}
+} // namespace
 
 #endif // ROS_CONTROL__IIWA_HARDWARE_INTERFACE_HPP

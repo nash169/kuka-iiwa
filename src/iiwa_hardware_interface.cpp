@@ -1,5 +1,7 @@
 #include <kuka_iiwa/iiwa_hardware_interface.h>
 
+#include <iostream>
+
 namespace iiwa_hardware_interface
 {
   IIWAHardwareInterface::IIWAHardwareInterface(ros::NodeHandle& nh) : nh_(nh)
@@ -34,7 +36,8 @@ namespace iiwa_hardware_interface
   void IIWAHardwareInterface::init()
   {
     // Get joint names
-    nh_.getParam("/iiwa/hardware_interface/joints", joint_names_);
+    ros::NodeHandle n_p("~");
+    n_p.getParam("iiwa/hardware_interface/joints", joint_names_);
     num_joints_ = joint_names_.size();
 
     // Resize vectors

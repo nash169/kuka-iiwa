@@ -1,0 +1,15 @@
+<launch>
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/"
+		args="
+			iiwa/controller/state
+			iiwa/controller/effort/joint_1
+			iiwa/controller/effort/joint_2
+			iiwa/controller/effort/joint_3
+			iiwa/controller/effort/joint_4
+			iiwa/controller/effort/joint_5
+			iiwa/controller/effort/joint_6
+			iiwa/controller/effort/joint_7
+		">
+		<rosparam file="$(find kuka_iiwa)/config/controllers.yaml" command="load"/>
+	</node>
+</launch>

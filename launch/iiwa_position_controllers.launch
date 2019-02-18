@@ -1,17 +1,18 @@
 <launch>
-  <rosparam file="$(find iiwa_hardware_interface)/config/hardware.yaml" command="load"/>
-  <rosparam file="$(find iiwa_hardware_interface)/config/controllers.yaml" command="load"/>
+  <rosparam file="$(find kuka_iiwa)/config/controllers.yaml" command="load"/>
   <!-- <rosparam file="$(find iiwa_hardware_interface)/config/joint_limits.yaml" command="load"/> -->
-  <node name="iiwa_hardware_interface" pkg="iiwa_hardware_interface" type="iiwa_hardware_interface_node" output="screen/">
+  <node pkg="kuka_iiwa" type="kuka_iiwa_node" name="kuka_iiwa" respawn="false" output="screen" >
+    <rosparam file="$(find kuka_iiwa)/config/hardware.yaml" command="load"/>
+  </node>
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/"
-        args="
-            /iiwa/controller/state
-            /iiwa/controller/torque/joint_1
-            /iiwa/controller/torque/joint_2
-            /iiwa/controller/torque/joint_3
-            /iiwa/controller/torque/joint_4
-            /iiwa/controller/torque/joint_5
-            /iiwa/controller/torque/joint_6
-            /iiwa/controller/torque/joint_7"
-  />
+		args="
+			/iiwa/controller/state
+			/iiwa/controller/effort/joint_1
+			/iiwa/controller/effort/joint_2
+			/iiwa/controller/effort/joint_3
+			/iiwa/controller/effort/joint_4
+			/iiwa/controller/effort/joint_5
+			/iiwa/controller/effort/joint_6
+			/iiwa/controller/effort/joint_7
+		"/>
 </launch>

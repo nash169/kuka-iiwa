@@ -130,7 +130,7 @@ include_directories(
   include
   ${catkin_INCLUDE_DIRS}
 )
-target_include_directories(iiwa_driver PUBLIC include ${catkin_INCLUDE_DIRS} ${FRI_INCLUDE_DIRS})
+# target_include_directories(${PROJECT_NAME} PUBLIC include ${catkin_INCLUDE_DIRS} ${FRI_INCLUDE_DIRS})
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}

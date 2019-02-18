@@ -3,7 +3,7 @@ iiwa:
     state:
       type: joint_state_controller/JointStateController
       publish_rate: 50 # Hz
-    position:
+    effort:
       joint_1:
         type: effort_controllers/JointEffortController
         joint: joint_1

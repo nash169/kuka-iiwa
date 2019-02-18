@@ -1,0 +1,13 @@
+joint_limits:
+  joint_1:
+    has_position_limits: true
+    min_postion:
+    max_position:
+    has_velocity_limits: true
+    max_velocity:
+    has_acceleration_limits: true
+    max_acceleration:
+    has_jerk_limits: true
+    max_jerk:
+    has_effort_limits: true
+    max_effort:

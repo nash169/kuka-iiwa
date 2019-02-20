@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="type" default="14" />
+  <!-- Upload iiwa URDF -->
+  <include file="$(find iiwa_description)/launch/iiwa$(arg type)_upload.launch" />
+
+  <!-- <rosparam file="$(find iiwa_hardware_interface)/config/joint_limits.yaml" command="load"/> -->
+  
+	<node pkg="kuka_iiwa" type="kuka_iiwa_node" name="kuka_iiwa" respawn="false" output="screen" >
+    <remap from="/joint_states" to="/iiwa/joint_states"/>
+    <remap from="/controller_manager" to="/iiwa/controller_manager"/>
+    <rosparam file="$(find kuka_iiwa)/config/hardware.yaml" command="load"/>
+  </node>
+  
+</launch>

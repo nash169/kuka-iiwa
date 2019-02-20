@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>iiwa_description</name>
+  <version>1.4.0</version>
+  <description>This package contains the URDF of the KUKA LBR IIWA robot (from IIWA_stack)</description>
+  <author email="bernardo.fichera@gmail.com">Bernardo Fichera</author>
+  <maintainer email="bernardo.fichera@gmail.com">Bernardo Fichera</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>

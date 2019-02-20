@@ -35,5 +35,10 @@
         "typeinfo": "cpp",
         "utility": "cpp",
         "iostream": "cpp"
-    }
+    },
+    "ros.distro": "melodic",
+    "python.autoComplete.extraPaths": [
+        "/home/cobotex/Documents/CatkinWS/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ]
 }

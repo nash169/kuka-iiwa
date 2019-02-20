@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>iiwa_control</name>
+  <version>0.0.1</version>
+  <description>Control for KUKA's IIWA robot</description>
+
+  <maintainer email="bernardo.fichera@gmail.com">Bernardo Fichera</maintainer>
+
+  <license>BSD</license>
+
+  <url type="repository">https://github.com/nash169/kuka_iiwa</url>
+
+  <author email="bernardo.fichera@gmail.com">Bernardo Fichera</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>ros_control</exec_depend>
+  <exec_depend>ros_controllers</exec_depend>
+
+</package>

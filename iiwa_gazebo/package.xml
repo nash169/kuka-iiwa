@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>iiwa_gazebo</name>
+  <version>1.0.0</version>
+  <description>This package allows to load a KUKA LBR IIWA robot and ROS Control into Gazebo</description>
+  <author email="bernardo.fichera@gmail.com">Bernardo Fichera</author>
+  <maintainer email="bernardo.fichera@gmail.com">Bernardo Fichera</maintainer>
+
+  <license>BSD</license>
+
+  <url type="repository">https://github.com/nash169/kuka_iiwa</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>gazebo_ros</build_depend>
+  <build_depend>gazebo_ros_control</build_depend>
+  <build_depend>roscpp</build_depend>
+
+  <exec_depend>iiwa_description</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend> 
+  <exec_depend>gazebo_ros_control</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+
+</package>

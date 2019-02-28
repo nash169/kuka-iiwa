@@ -1,4 +1,4 @@
-#include <kuka_iiwa/iiwa_hardware_interface.h>
+#include <iiwa_hw/iiwa_hw.h>
 
 namespace iiwa_hardware_interface
 {

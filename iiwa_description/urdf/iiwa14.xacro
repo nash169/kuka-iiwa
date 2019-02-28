@@ -77,7 +77,7 @@
     </link>
 
     <!-- joint between link_0 and link_1 -->
-    <joint name="joint_0" type="revolute">
+    <joint name="joint_1" type="revolute">
       <parent link="link_0"/>
       <child link="link_1"/>
       <origin xyz="0 0 0.1575" rpy="0 0 0"/>
@@ -116,7 +116,7 @@
     </link>
 
     <!-- joint between link_1 and link_2 -->
-    <joint name="joint_1" type="revolute">
+    <joint name="joint_2" type="revolute">
       <parent link="link_1"/>
       <child link="link_2"/>
       <origin xyz="0 0 0.2025" rpy="${PI / 2}   0 ${PI}"/>
@@ -155,7 +155,7 @@
     </link>
 
     <!-- joint between link_2 and link_3 -->
-    <joint name="joint_2" type="revolute">
+    <joint name="joint_3" type="revolute">
       <parent link="link_2"/>
       <child link="link_3"/>
       <origin xyz="0 0.2045 0" rpy="${PI / 2} 0 ${PI}"/>
@@ -194,7 +194,7 @@
     </link>
 
    <!-- joint between link_3 and link_4 -->
-    <joint name="joint_3" type="revolute">
+    <joint name="joint_4" type="revolute">
       <parent link="link_3"/>
       <child link="link_4"/>
       <origin xyz="0 0 0.2155" rpy="${PI / 2} 0 0"/>
@@ -233,7 +233,7 @@
     </link>
 
     <!-- joint between link_4 and link_5 -->
-    <joint name="joint_4" type="revolute">
+    <joint name="joint_5" type="revolute">
       <parent link="link_4"/>
       <child link="link_5"/>
       <origin xyz="0 0.1845 0" rpy="${-PI / 2} ${PI} 0"/>
@@ -272,7 +272,7 @@
     </link>
 
  <!-- joint between link_5 and link_6 -->
-    <joint name="joint_5" type="revolute">
+    <joint name="joint_6" type="revolute">
       <parent link="link_5"/>
       <child link="link_6"/>
       <origin xyz="0 0 0.2155" rpy="${PI / 2} 0 0"/>
@@ -311,7 +311,7 @@
     </link>
 
  <!-- joint between link_6 and link_7 -->
-    <joint name="joint_6" type="revolute">
+    <joint name="joint_7" type="revolute">
       <parent link="link_6"/>
       <child link="link_7"/>
       <origin xyz="0 0.081 0" rpy="${- PI / 2} ${PI} 0"/>

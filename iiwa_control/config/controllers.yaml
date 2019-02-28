@@ -5,24 +5,50 @@ iiwa:
     publish_rate: 200  # in Hz
 
   # Controllers ------------------------------------------------
-  effort:
+  torque:
     type: effort_controllers/JointGroupEffortController
     joints:
-      - joint_0
       - joint_1
       - joint_2
       - joint_3
       - joint_4
       - joint_5
       - joint_6
+      - joint_7
 
+  pid:
+    type: position_controllers/JointGroupEffortController
+    joints:
+      - joint_1
+      - joint_2
+      - joint_3
+      - joint_4
+      - joint_5
+      - joint_6
+      - joint_7
+    joint_1:
+      pid: {p: 800.0, i: 100, d: 80.0, i_clamp_min: -10000, i_clamp_max: 10000}
+    joint_2:
+      pid: {p: 800.0, i: 1000, d: 100.0, i_clamp_min: -10000, i_clamp_max: 10000}
+    joint_3:
+      pid: {p: 800.0, i: 10, d: 80.0, i_clamp_min: -10000, i_clamp_max: 10000}
+    joint_4:
+      pid: {p: 800.0, i: 10, d: 80.0, i_clamp_min: -10000, i_clamp_max: 10000}
+    joint_5:
+      pid: {p: 300.0, i: 5, d: 10.0, i_clamp_min: -10000, i_clamp_max: 10000}
+    joint_6:
+      pid: {p: 50.0, i: 1, d: 1.0, i_clamp_min: -10000, i_clamp_max: 10000}
+    joint_7:
+      pid: {p: 10.0, i: 0.1, d: 1.0, i_clamp_min: -10000, i_clamp_max: 10000}
+  
   position:
     type: position_controllers/JointGroupPositionController
     joints:
-      - joint_0
       - joint_1
       - joint_2
       - joint_3
       - joint_4
       - joint_5
       - joint_6
+      - joint_7
+    

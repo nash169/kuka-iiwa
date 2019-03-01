@@ -6,8 +6,8 @@ namespace iiwa_hardware_interface
   {
     init();
     controller_manager_.reset(new controller_manager::ControllerManager(this, nh_));
-    // nh_.param("/iiwa/hardware_interface/loop_hz", loop_hz_, 0.1);
-    // ros::Duration update_freq = ros::Duration(1.0/loop_hz_);
+    nh_.param("iiwa/hardware_interface/loop_hz", loop_hz_, 0.1);
+    ros::Duration update_freq = ros::Duration(1.0/loop_hz_);
     // non_realtime_loop_ = nh_.createTimer(update_freq, &IIWAHardwareInterface::update, this);
     last_time_ = ros::Time::now();
   }
@@ -55,11 +55,11 @@ namespace iiwa_hardware_interface
 
       // Create position joint interface
       hardware_interface::JointHandle jointPositionHandle(jointStateHandle, &joint_position_command_[i]);
-      // joint_limits_interface::JointLimits limits;
-      // joint_limits_interface::SoftJointLimits softLimits;
-      // joint_limits_interface::getJointLimits(joint.name, nh_, limits);
-      // joint_limits_interface::PositionJointSoftLimitsHandle jointLimitHandle(jointPositionHandle, limits, softLimits);
-      // position_joint_limits_interface_.registerHandle(jointLimitHandle);
+      joint_limits_interface::JointLimits limits;
+      joint_limits_interface::SoftJointLimits softLimits;
+      joint_limits_interface::getJointLimits(joint_names_[i], nh_, limits);
+      joint_limits_interface::PositionJointSoftLimitsHandle jointLimitHandle(jointPositionHandle, limits, softLimits);
+      position_joint_limits_interface_.registerHandle(jointLimitHandle);
       position_joint_interface_.registerHandle(jointPositionHandle);
 
       // Create effort joint interface
@@ -70,7 +70,7 @@ namespace iiwa_hardware_interface
     registerInterface(&joint_state_interface_);
     registerInterface(&position_joint_interface_);
     registerInterface(&effort_joint_interface_);
-    // registerInterface(&position_joint_limits_interface_);
+    registerInterface(&position_joint_limits_interface_);
   }
 
   // void IIWAHardwareInterface::update(const ros::TimerEvent& e)

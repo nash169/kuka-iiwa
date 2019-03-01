@@ -17,8 +17,6 @@
     <arg name="hardware_interface" value="$(arg hardware_interface)"/>
     <arg name="robot_name" value="$(arg robot_name)"/>
   </include>
-
-  <!-- <rosparam file="$(find iiwa_hardware_interface)/config/joint_limits.yaml" command="load"/> -->
   
   <!-- Load iiwa hardware interface -->
 	<node pkg="iiwa_hw" type="iiwa_hw_node" name="iiwa_hw" respawn="false" output="screen" >
@@ -26,6 +24,7 @@
     <remap from="/controller_manager" to="/iiwa/controller_manager"/>
     <!-- Load configurations from YAML file to parameter server -->
     <rosparam file="$(find iiwa_hw)/config/hardware.yaml" command="load"/>
+    <rosparam file="$(find iiwa_hw)/config/joint_limits.yaml" command="load"/>
   </node>
 
   <!-- Load controller -->
